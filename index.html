@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Centros Logísticos (CLOG) — Correo Argentino</title>
+  <meta name="description"
+    content="Red Nacional de Centros Logísticos (CLOG) de Correo Argentino. Mapa interactivo federal con capacidad operativa, dotaciones, turnos, calidad SLA y transporte.">
+  <link rel="icon" type="image/png"
+    href="data:image/png;base64,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">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="shortcut icon" href="favicon.ico">
+  <link rel="apple-touch-icon" href="favicon.png">
+  <link rel="stylesheet" href="leaflet.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+</head>
+
+<body class="app-solo-mapa">
+
+  <!-- =====================================================
+       HEADER SUPERIOR DEDICADO: LOGO + TITULO + BUSCADOR + REGIONES
+       ===================================================== -->
+  <header class="app-header-clog">
+    <div class="header-clog-left">
+      <!-- Logo Oficial Correo Argentino -->
+      <div class="header-logo-container">
+        <img src="imagenes/correo_argentino_logo.png" alt="Correo Argentino" class="header-logo-img">
+      </div>
+      <div class="header-divider"></div>
+      <div class="header-brand-info">
+        <h1 class="header-title">RED DE CENTROS LOGÍSTICOS</h1>
+        <p class="header-subtitle">Infraestructura Logística Federal · Correo Argentino</p>
+      </div>
+    </div>
+
+    <!-- Filtros de Región Rápidos -->
+    <div class="header-regions-nav">
+      <button class="region-chip activo" data-region="nacional" onclick="seleccionarRegionNav('nacional', this)">
+        Todo el País
+      </button>
+      <button class="region-chip" data-region="amba" onclick="seleccionarRegionNav('amba', this)">
+        AMBA
+      </button>
+      <button class="region-chip" data-region="pba" onclick="seleccionarRegionNav('pba', this)">
+        PBA / La Pampa
+      </button>
+      <button class="region-chip" data-region="centro" onclick="seleccionarRegionNav('centro', this)">
+        Centro / NEA
+      </button>
+      <button class="region-chip" data-region="cuyo" onclick="seleccionarRegionNav('cuyo', this)">
+        Cuyo / NOA
+      </button>
+      <button class="region-chip" data-region="patagonia" onclick="seleccionarRegionNav('patagonia', this)">
+        Patagonia
+      </button>
+    </div>
+
+    <div class="header-clog-right">
+      <!-- Buscador Global de CLOGs -->
+      <div class="header-search-wrap">
+        <div class="search-input-box">
+          <svg class="search-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <input type="text" id="global-search" placeholder="Buscar CLOG (ej: C12, Neuquén, Rosario, CL7)..." autocomplete="off">
+          <button id="search-clear-btn" class="search-clear" onclick="limpiarBuscador()" title="Limpiar" style="display:none;">✕</button>
+        </div>
+        <div id="search-results-dropdown" class="search-results-dropdown"></div>
+      </div>
+
+      <!-- Badge Contador de CLOGs -->
+      <div class="clog-counter-badge" id="clog-counter-badge">
+        <span class="clog-dot-live"></span>
+        <span class="clog-badge-text"><strong>30</strong> CLOGs</span>
+      </div>
+
+      <!-- Botón Exportar CSV -->
+      <button onclick="descargarCSVOficial()" class="btn-header-csv" title="Descargar dataset de Centros Logísticos en CSV">
+        <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+          <polyline points="7 10 12 15 17 10"></polyline>
+          <line x1="12" y1="15" x2="12" y2="3"></line>
+        </svg>
+        <span>CSV</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- =====================================================
+       CONTENEDOR PRINCIPAL: MAPA EN PANTALLA COMPLETA
+       ===================================================== -->
+  <main id="main-map-fullscreen" class="main-map-fullscreen">
+
+    <!-- Área de Mapa Leaflet -->
+    <div id="mapa-contenedor" class="mapa-contenedor solo-mapa-view">
+
+      <!-- Controles flotantes de navegación del mapa -->
+      <div class="mapa-floating-controls">
+        <button class="btn-ctrl-mapa" id="btn-zoom-in" onclick="zoomIn()" title="Acercar mapa">+</button>
+        <button class="btn-ctrl-mapa" id="btn-zoom-out" onclick="zoomOut()" title="Alejar mapa">−</button>
+        <button class="btn-ctrl-mapa" id="btn-zoom-reset" onclick="zoomReset()" title="Restablecer vista nacional de Argentina">↺</button>
+        <button class="btn-ctrl-mapa" id="btn-zoom-center" onclick="zoomReset()" title="Centrar mapa en Argentina">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="7"></circle>
+            <line x1="12" y1="1" x2="12" y2="5"></line>
+            <line x1="12" y1="19" x2="12" y2="23"></line>
+            <line x1="1" y1="12" x2="5" y2="12"></line>
+            <line x1="19" y1="12" x2="23" y2="12"></line>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Leyenda exclusiva de Centros Logísticos -->
+      <div class="mapa-leyenda">
+        <div class="leyenda-fila">
+          <span class="leyenda-dot dot-clog"></span>
+          <span class="leyenda-texto">Centros Logísticos (CLOG)</span>
+        </div>
+      </div>
+
+      <!-- Compás / Rosa de los vientos (abajo a la izquierda) -->
+      <div class="mapa-compass">
+        <div class="compass-arrow-wrap">
+          <div class="compass-n">N</div>
+          <svg class="compass-arrow" viewBox="0 0 24 24" width="22" height="22">
+            <polygon points="12 2 16 15 12 12" fill="#002554" />
+            <polygon points="12 2 8 15 12 12" fill="#7ba0c7" />
+            <polygon points="12 12 16 15 12 21" fill="#c4d5e7" />
+            <polygon points="12 12 8 15 12 21" fill="#9dbcdb" />
+          </svg>
+        </div>
+        <span class="compass-label">Argentina</span>
+      </div>
+
+      <!-- Capa Leaflet del mapa interactivo con límites y ciudades -->
+      <div id="mapa-leaflet" class="mapa-leaflet"></div>
+
+      <!-- Hint inferior flotante -->
+      <div class="mapa-hint-bottom">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" style="margin-right:6px;">
+          <circle cx="12" cy="12" r="10"></circle>
+          <line x1="12" y1="16" x2="12" y2="12"></line>
+          <line x1="12" y1="8" x2="12.01" y2="8"></line>
+        </svg>
+        <span>Hacé clic en cualquier Centro Logístico para abrir su ficha técnica con información completa.</span>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- =====================================================
+       TARJETA / POPUP DETALLADO DEL CLOG SELECCIONADO
+       Contiene el 100% de la información operativa oficial
+       ===================================================== -->
+  <div id="popup-nodo" class="popup-nodo-overlay" onclick="cerrarPopupNodoOverlay(event)">
+    <div class="popup-nodo-card">
+      <button class="btn-cerrar-popup" onclick="deseleccionarTodo()" title="Cerrar ficha">✕</button>
+
+      <!-- Cabecera de foto y galería -->
+      <div class="popup-img-wrap" onclick="abrirGaleriaDesdePopup()" style="cursor:pointer;"
+        title="Hacer clic para ver en pantalla completa">
+        <img id="popup-img" src="imagenes/placeholder.jpg" alt="Foto del Centro Logístico"
+          onerror="this.src='imagenes/placeholder.jpg'">
+        <span id="popup-badge-tipo" class="popup-badge-tipo">Centro Logístico (CLOG)</span>
+        <span id="popup-badge-cod" class="popup-badge-cod">C12</span>
+        <span class="popup-img-zoom-hint">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"
+            style="vertical-align:-1.5px;margin-right:5px;">
+            <polyline points="15 3 21 3 21 9"></polyline>
+            <polyline points="9 21 3 21 3 15"></polyline>
+            <line x1="21" y1="3" x2="14" y2="10"></line>
+            <line x1="3" y1="21" x2="10" y2="14"></line>
+          </svg>Ampliar foto
+        </span>
+        <!-- Flechas de navegación entre fotos -->
+        <button id="popup-arrow-prev" class="popup-nav-arrow popup-arrow-prev" onclick="popupFotoAnterior(event)" title="Foto anterior">&#8249;</button>
+        <button id="popup-arrow-next" class="popup-nav-arrow popup-arrow-next" onclick="popupFotoSiguiente(event)" title="Foto siguiente">&#8250;</button>
+        <!-- Contador de foto -->
+        <span id="popup-foto-counter" class="popup-foto-counter"></span>
+      </div>
+
+      <!-- Tira interactiva de miniaturas -->
+      <div id="popup-galeria-strip" class="popup-galeria-strip"></div>
+
+      <div class="popup-body">
+        <!-- Selector si la provincia tiene múltiples nodos -->
+        <div id="popup-nodos-pills" class="popup-nodos-pills" style="display:none;"></div>
+
+        <!-- Encabezado principal del CLOG -->
+        <div class="popup-header-info">
+          <div class="popup-title-row">
+            <h3 id="popup-nombre">Centro Logístico Córdoba</h3>
+            <span id="popup-cod-pill" class="popup-cod-pill">CL7</span>
+          </div>
+          <p id="popup-ubicacion">Córdoba · Región Centro</p>
+          <div class="popup-domicilio-wrap" id="popup-domicilio-wrap">
+            <svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor">
+              <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+            </svg>
+            <span id="popup-domicilio">Domicilio operativo</span>
+          </div>
+        </div>
+
+        <!-- 3 KPIs Principales de la Planta -->
+        <div class="popup-stats-grid">
+          <div class="pstat">
+            <span class="pstat-val" id="popup-capacidad">18.500 m²</span>
+            <span class="pstat-lbl">Superficie operativa</span>
+          </div>
+          <div class="pstat">
+            <span class="pstat-val" id="popup-piezas">42.000</span>
+            <span class="pstat-lbl" id="popup-piezas-lbl">Promedio diario paquetería</span>
+            <span class="pstat-sub" id="popup-piezas-sub">Envíos / día</span>
+          </div>
+          <div class="pstat">
+            <span class="pstat-val" id="popup-dotacion">53 pers.</span>
+            <span class="pstat-lbl" id="popup-dotacion-lbl">Dotación total</span>
+          </div>
+        </div>
+
+        <!-- Piezas Postales 2D (Auditado) -->
+        <div class="popup-section-card" id="popup-postal2d-section" style="display:none;">
+          <h4 class="popup-sec-title">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+              <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+            </svg>
+            Volumen Piezas Postales 2D (Auditado)
+          </h4>
+          <div class="popup-postal2d-box">
+            <div class="postal2d-stat-row">
+              <div>
+                <span class="postal2d-val" id="pop-postal2d-val">-</span>
+                <span class="postal2d-unit">piezas postales 2D / día</span>
+              </div>
+              <span class="postal2d-badge" id="pop-postal2d-badge">Promedio Diario 2D</span>
+            </div>
+            <div class="postal2d-footer">
+              <span id="pop-postal2d-sub">-</span>
+              <span class="postal2d-tag-note">Correspondencia tradicional 2D · Separado de Paquetería</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Calidad y Nivel de Servicio Paq.AR & FV -->
+        <div class="popup-section-card" id="popup-calidad-section">
+          <h4 class="popup-sec-title">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+            </svg>
+            Calidad de Servicio Paq.AR (SLA y FV)
+          </h4>
+          <div class="popup-calidad-grid">
+            <div class="calidad-box">
+              <span class="calidad-tag tag-sla">SLA Paq.AR</span>
+              <span class="calidad-val" id="popup-sla-val">96,5%</span>
+              <span class="calidad-sub">Cumplimiento en plazo de entrega</span>
+            </div>
+            <div class="calidad-box">
+              <span class="calidad-tag tag-fv">FV (1ª Visita)</span>
+              <span class="calidad-val" id="popup-fv-val">85,4%</span>
+              <span class="calidad-sub">Efectividad de entrega en 1ª visita</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Desglose de Turnos Horarios Reales del Excel -->
+        <div class="popup-section-card" id="popup-turnos-section">
+          <h4 class="popup-sec-title">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+              <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm1 14.59L8.71 12.3a1 1 0 0 1 1.41-1.41L12 12.76l4.29-4.3a1 1 0 0 1 1.41 1.41z"/>
+            </svg>
+            Turnos y Franjas Horarias Operativas
+          </h4>
+          <div class="popup-turnos-grid">
+            <div class="turno-box">
+              <div class="turno-header">
+                <span class="turno-tag tag-noche">Turno Noche</span>
+                <span class="turno-franja" id="turno-noche-franja">-</span>
+              </div>
+              <div class="turno-body">
+                <span class="turno-dot" id="turno-noche-dot">0 personas</span>
+              </div>
+            </div>
+            <div class="turno-box">
+              <div class="turno-header">
+                <span class="turno-tag tag-manana">Turno Mañana</span>
+                <span class="turno-franja" id="turno-manana-franja">-</span>
+              </div>
+              <div class="turno-body">
+                <span class="turno-dot" id="turno-manana-dot">0 personas</span>
+              </div>
+            </div>
+            <div class="turno-box">
+              <div class="turno-header">
+                <span class="turno-tag tag-tarde">Turno Tarde</span>
+                <span class="turno-franja" id="turno-tarde-franja">-</span>
+              </div>
+              <div class="turno-body">
+                <span class="turno-dot" id="turno-tarde-dot">0 personas</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Procesos y Gestión Operativa -->
+        <div class="popup-section-card" id="popup-procesos-section">
+          <h4 class="popup-sec-title">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+              <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+            </svg>
+            Procesos y Gestión Operativa
+          </h4>
+          <div class="popup-procesos-grid">
+            <span class="proc-badge" id="proc-cdp">CDP Paquetería</span>
+            <span class="proc-badge" id="proc-ctp">CTP Postal</span>
+            <span class="proc-badge" id="proc-ptapta">Planta a Planta</span>
+            <span class="proc-badge" id="proc-clasif">Clasificación</span>
+          </div>
+          <div class="popup-responsables-grid">
+            <div class="resp-item">
+              <span class="resp-lbl">Jefe de Planta:</span>
+              <span class="resp-val" id="popup-jefe-planta">-</span>
+            </div>
+            <div class="resp-item">
+              <span class="resp-lbl">Jefe de Nodo:</span>
+              <span class="resp-val" id="popup-jefe-nodo">-</span>
+            </div>
+            <div class="resp-item">
+              <span class="resp-lbl">Régimen Inmueble:</span>
+              <span class="resp-val" id="popup-inmueble">-</span>
+            </div>
+            <div class="resp-item">
+              <span class="resp-lbl">Almacenamiento:</span>
+              <span class="resp-val" id="popup-almacenamiento">-</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Detalle Ingreso de Envíos (Maquinable vs No Maquinable vs Última Milla) -->
+        <div class="popup-section-card" id="popup-ingresos-section" style="display:none;">
+          <h4 class="popup-sec-title">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+              <path d="M20 7l-8-4-8 4 8 4 8-4zm-8 6l-8-4v8l8 4V13zm2 .9l6-3V19l-6 3V13.9z"/>
+            </svg>
+            Ingreso y Flujo de Envíos (Auditado)
+          </h4>
+          <div class="popup-ingresos-grid">
+            <div class="pstat-subcard">
+              <span class="pstat-subcard-val" id="pop-ing-maq">-</span>
+              <span class="pstat-subcard-lbl" id="pop-ing-maq-lbl">Maquinable</span>
+              <span class="pstat-subcard-sub" id="pop-ing-maq-sub">-</span>
+            </div>
+            <div class="pstat-subcard">
+              <span class="pstat-subcard-val" id="pop-ing-nomaq">-</span>
+              <span class="pstat-subcard-lbl" id="pop-ing-nomaq-lbl">No Maquinable</span>
+              <span class="pstat-subcard-sub" id="pop-ing-nomaq-sub">-</span>
+            </div>
+            <div class="pstat-subcard">
+              <span class="pstat-subcard-val" id="pop-ing-um">-</span>
+              <span class="pstat-subcard-lbl" id="pop-ing-um-lbl">Promedio diario última milla</span>
+              <span class="pstat-subcard-sub" id="pop-ing-um-sub">-</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Líneas de Transporte Conectadas -->
+        <div class="popup-section-card" id="popup-transportes-section" style="display:none;">
+          <h4 class="popup-sec-title">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+              <path d="M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4zM6 18.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm13.5-9l1.96 2.5H17V9.5h2.5zm-1.5 9c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/>
+            </svg>
+            Líneas de Transporte Asignadas (<span id="pop-trans-cant">0</span>)
+          </h4>
+          <div class="popup-transportes-list" id="popup-transportes-list"></div>
+        </div>
+
+        <p id="popup-desc" class="popup-desc">
+          Centro Logístico estratégico para la distribución y clasificación de envíos en toda la provincia y conexión con la Red Operativa Nacional.
+        </p>
+
+        <div class="popup-actions">
+          <button class="btn-popup-galeria" onclick="abrirGaleriaDesdePopup()">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px;margin-right:7px;">
+              <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z" />
+              <circle cx="12" cy="13" r="4" />
+            </svg>Ver galería fotográfica (<span id="popup-cant-fotos">0</span> fotos)
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =====================================================
+       MODAL DE GALERÍA FOTOGRÁFICA EN PANTALLA COMPLETA
+       ===================================================== -->
+  <div id="modal-galeria" class="modal-galeria" onclick="cerrarGaleriaOverlay(event)">
+    <div class="galeria-contenedor">
+      <div class="galeria-header">
+        <div class="gal-info">
+          <h3 id="gal-titulo">Fotografía del Centro Logístico</h3>
+          <p id="gal-sub">Correo Argentino — Infraestructura Logística</p>
+        </div>
+        <button class="btn-cerrar-gal" onclick="cerrarGaleria()">✕</button>
+      </div>
+
+      <div class="galeria-media">
+        <button class="gal-arrow prev" onclick="fotoAnterior()">&#8249;</button>
+        <img id="gal-img" src="" alt="Fotografía ampliada">
+        <button class="gal-arrow next" onclick="fotoSiguiente()">&#8250;</button>
+      </div>
+
+      <div class="galeria-footer">
+        <span id="gal-contador">Foto 1 de 1</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts GeoJSON y Lógica -->
+  <script src="leaflet.js"></script>
+  <script src="provincias-geojson.js"></script>
+  <script src="nodos-data.js"></script>
+  <script src="script.js"></script>
+
+</body>
+
+</html>

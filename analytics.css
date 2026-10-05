@@ -1,0 +1,1266 @@
+/* =====================================================
+   CORREO ARGENTINO — ANALYTICS & ESTADÍSTICAS LOGÍSTICAS
+   Estilos específicos para el tablero de métricas y gráficos
+   ===================================================== */
+
+/* Contenedor general del dashboard de analytics */
+.analytics-dashboard {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  width: 100%;
+}
+
+/* Barra de Filtros y Acciones Superiores */
+.analytics-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  background-color: transparent;
+  padding: 6px 0 16px 0;
+  border-bottom: 1px solid #e2e8f0;
+  margin-bottom: 6px;
+  flex-wrap: wrap;
+}
+
+.toolbar-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.toolbar-lbl {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #475569;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.toolbar-lbl svg {
+  color: #64748b;
+  flex-shrink: 0;
+}
+
+.toolbar-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.btn-analytics {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 38px;
+  min-width: 165px;
+  padding: 0 18px;
+  font-size: 13px;
+  font-weight: 700;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: inherit;
+  text-decoration: none;
+  box-sizing: border-box;
+  line-height: 1;
+}
+
+.btn-primary-ca,
+.btn-primary-ca:hover,
+#btn-exportar-csv,
+#btn-exportar-csv:hover {
+  background-color: #002554 !important;
+  color: #ffffff !important;
+  border: 1.5px solid #002554 !important;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+.btn-primary-ca svg,
+#btn-exportar-csv svg {
+  stroke: #ffffff !important;
+}
+
+.btn-secondary-ca,
+.btn-secondary-ca:hover {
+  background-color: #ffffff !important;
+  color: #002554 !important;
+  border: 1.5px solid #cbd5e1 !important;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+.btn-secondary-ca svg {
+  stroke: #002554 !important;
+}
+
+.btn-amarillo-ca {
+  background-color: var(--ca-amarillo);
+  color: var(--ca-azul-dark);
+}
+
+.btn-amarillo-ca:hover {
+  background-color: #f0c300;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(255, 210, 0, 0.35);
+}
+
+/* =====================================================
+   BARRA DE NAVEGACIÓN HORIZONTAL POR PESTAÑAS (TABS)
+   ===================================================== */
+.section-anchor-nav {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  border-bottom: 1px solid #e2e8f0;
+  padding: 0 4px;
+  margin-bottom: 18px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.section-anchor-nav::-webkit-scrollbar {
+  display: none;
+}
+
+.analytics-tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  border: none;
+  font-family: inherit;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #475569;
+  text-decoration: none;
+  padding: 10px 2px 14px 2px;
+  border-bottom: 2.5px solid transparent;
+  white-space: nowrap;
+  cursor: pointer;
+  outline: none;
+  transition: color 0.15s ease, border-color 0.15s ease;
+  position: relative;
+  bottom: -1px;
+}
+
+.analytics-tab:hover {
+  color: #0f172a;
+  border-bottom-color: #cbd5e1;
+}
+
+.analytics-tab.active {
+  color: #002554;
+  font-weight: 800;
+  border-bottom-color: #002554;
+}
+
+.tab-icon {
+  width: 17px;
+  height: 17px;
+  color: #64748b;
+  transition: color 0.15s ease;
+  flex-shrink: 0;
+}
+
+.analytics-tab:hover .tab-icon {
+  color: #334155;
+}
+
+.analytics-tab.active .tab-icon {
+  color: #002554;
+}
+
+.analytics-tab .tab-icon.tab-icon-yellow,
+.analytics-tab.active .tab-icon.tab-icon-yellow {
+  color: #f59e0b;
+}
+
+/* =====================================================
+   BLOQUES DE SECCIÓN (FILTRABLES POR PESTAÑAS)
+   ===================================================== */
+.analytics-section-block {
+  animation: fadeInTabPanel 0.22s ease-in-out;
+}
+
+@keyframes fadeInTabPanel {
+  from {
+    opacity: 0.3;
+    transform: translateY(3px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =====================================================
+   GRID DE 7 TARJETAS DE KPIS ANALÍTICOS
+   ===================================================== */
+.analytics-kpis-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 14px;
+  margin-bottom: 24px;
+}
+
+@media (min-width: 1600px) {
+  .analytics-kpis-grid {
+    grid-template-columns: repeat(8, 1fr);
+  }
+}
+
+@media (max-width: 1400px) {
+  .analytics-kpis-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 992px) {
+  .analytics-kpis-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .analytics-kpis-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.akpi-card {
+  background-color: #ffffff;
+  border-radius: 10px;
+  border: 1px solid #e2e8f0;
+  padding: 16px 16px 18px 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 126px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.akpi-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 37, 84, 0.08);
+}
+
+/* Bordes de color izquierdo por tarjeta */
+.akpi-card.card-volumen {
+  border-left: 4px solid #f59e0b;
+  background: linear-gradient(180deg, #ffffff 55%, #fffdf4 100%);
+}
+
+.akpi-card.card-plantas {
+  border-left: 4px solid #2563eb;
+}
+
+.akpi-card.card-dotacion {
+  border-left: 4px solid #7c3aed;
+}
+
+.akpi-card.card-superficie {
+  border-left: 4px solid #10b981;
+}
+
+.akpi-card.card-turno {
+  border-left: 4px solid #ea580c;
+}
+
+.akpi-card.card-sla {
+  border-left: 4px solid #16a34a;
+  background: linear-gradient(180deg, #ffffff 55%, #f0fdf4 100%);
+}
+
+.akpi-card.card-fv {
+  border-left: 4px solid #0284c7;
+  background: linear-gradient(180deg, #ffffff 55%, #f0f9ff 100%);
+}
+
+.akpi-card.card-postal2d {
+  border-left: 4px solid #6366f1;
+  background: linear-gradient(180deg, #ffffff 55%, #f5f3ff 100%);
+}
+
+.akpi-card.card-rendimiento {
+  border-left: 4px solid #0284c7;
+}
+
+.akpi-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  gap: 8px;
+}
+
+.akpi-title {
+  font-size: 11px;
+  font-weight: 800;
+  color: #475569;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  line-height: 1.2;
+}
+
+.akpi-naked-icon {
+  width: 20px;
+  height: 20px;
+  color: #64748b;
+  flex-shrink: 0;
+}
+
+.akpi-naked-icon.icon-yellow {
+  color: #f59e0b;
+}
+
+.akpi-val {
+  font-size: 26px;
+  font-weight: 800;
+  color: #0f172a;
+  line-height: 1.15;
+  margin-bottom: 4px;
+  letter-spacing: -0.4px;
+  font-family: 'Plus Jakarta Sans', var(--font-principal);
+}
+
+.card-turno .akpi-val {
+  font-size: 21px;
+  letter-spacing: -0.3px;
+}
+
+.akpi-sub {
+  font-size: 11.5px;
+  font-weight: 500;
+  color: #64748b;
+  line-height: 1.35;
+}
+
+/* Sparkline decorativo dinámico en base de Card 1 */
+.akpi-sparkline {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 28px;
+  pointer-events: none;
+  opacity: 0.95;
+  overflow: visible;
+}
+
+#sparkline-path,
+#sparkline-area {
+  transition: d 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* =====================================================
+   GRIDS DE GRÁFICOS (CHART.JS)
+   ===================================================== */
+.charts-grid-row {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 20px;
+}
+
+.col-12 { grid-column: span 12; }
+.col-8  { grid-column: span 8; }
+.col-7  { grid-column: span 7; }
+.col-6  { grid-column: span 6; }
+.col-5  { grid-column: span 5; }
+.col-4  { grid-column: span 4; }
+
+@media (max-width: 1100px) {
+  .col-8, .col-7, .col-5, .col-4 {
+    grid-column: span 12;
+  }
+}
+
+@media (max-width: 900px) {
+  .col-6 {
+    grid-column: span 12;
+  }
+}
+
+.chart-card {
+  background-color: #ffffff;
+  border-radius: var(--radius-card);
+  border: 1px solid #dce6f2;
+  box-shadow: var(--shadow-card);
+  padding: 20px 22px;
+  display: flex;
+  flex-direction: column;
+  min-height: 380px;
+}
+
+.chart-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.chart-card-titles {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.chart-card-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background-color: #eaf1fa;
+  color: var(--ca-azul-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.chart-card-h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--texto-dark);
+  margin: 0;
+  line-height: 1.2;
+}
+
+.chart-card-sub {
+  font-size: 12px;
+  color: var(--texto-gris);
+  margin-top: 2px;
+}
+
+.chart-badge-tag {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 6px;
+  background-color: #eef4fb;
+  color: #002554;
+  border: 1px solid #d4e3f3;
+  letter-spacing: 0.3px;
+}
+
+.chart-canvas-container {
+  position: relative;
+  flex: 1;
+  width: 100%;
+  min-height: 290px;
+}
+
+/* =====================================================
+   TABLA DE DETALLE ANALÍTICO DE PLANTAS
+   ===================================================== */
+.table-card {
+  background-color: #ffffff;
+  border-radius: var(--radius-card);
+  border: 1px solid #dce6f2;
+  box-shadow: var(--shadow-card);
+  padding: 22px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.table-header-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.table-search-input {
+  background-color: #f4f8fd;
+  border: 1px solid #cbdcee;
+  border-radius: 8px;
+  padding: 8px 14px 8px 36px;
+  font-size: 13px;
+  font-family: inherit;
+  color: var(--texto-dark);
+  outline: none;
+  width: 280px;
+  transition: border-color 0.15s, background-color 0.15s;
+}
+
+.table-search-input:focus {
+  background-color: #ffffff;
+  border-color: #002554;
+}
+
+.table-search-wrap {
+  position: relative;
+}
+
+.table-search-wrap svg {
+  position: absolute;
+  top: 50%;
+  left: 11px;
+  transform: translateY(-50%);
+  color: #64748b;
+  pointer-events: none;
+}
+
+.table-responsive {
+  overflow-x: auto;
+  border: 1px solid #e2ecf7;
+  border-radius: 10px;
+}
+
+.analytics-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  text-align: left;
+}
+
+.analytics-table thead {
+  background: linear-gradient(180deg, #f0f6fd 0%, #e6effa 100%);
+  border-bottom: 2px solid #b8d2ec;
+}
+
+.analytics-table th {
+  padding: 12px 14px;
+  font-weight: 700;
+  color: #002554;
+  white-space: nowrap;
+  user-select: none;
+  cursor: pointer;
+  transition: background-color 0.15s;
+}
+
+.analytics-table th:hover {
+  background-color: #ddeaf8;
+}
+
+.analytics-table th.sorted-asc::after {
+  content: ' ▲';
+  font-size: 10px;
+  color: #002554;
+}
+
+.analytics-table th.sorted-desc::after {
+  content: ' ▼';
+  font-size: 10px;
+  color: #002554;
+}
+
+.analytics-table tbody tr {
+  border-bottom: 1px solid #edf2f9;
+  transition: background-color 0.12s;
+}
+
+.analytics-table tbody tr:hover {
+  background-color: #f7faff;
+}
+
+.analytics-table td {
+  padding: 11px 14px;
+  color: #243b53;
+  white-space: nowrap;
+}
+
+.table-pill-cod {
+  background-color: #002554;
+  color: #FFD200;
+  font-size: 11px;
+  font-weight: 800;
+  padding: 2px 7px;
+  border-radius: 5px;
+  display: inline-block;
+  letter-spacing: 0.3px;
+}
+
+.table-pill-tipo {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 12px;
+}
+
+.tipo-clog-badge { background-color: #e0f2fe; color: #0369a1; }
+.tipo-sorter-badge { background-color: #fef08a; color: #854d0e; }
+.tipo-cdp-badge { background-color: #e0e7ff; color: #4338ca; }
+.tipo-ctp-badge { background-color: #f3e8ff; color: #6b21a8; }
+
+.table-footer-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 12.5px;
+  color: #627d98;
+  padding-top: 4px;
+}
+
+/* =====================================================
+   SECCIONES ADICIONALES DEL EXCEL COMPLETO
+   ===================================================== */
+.section-anchor-nav {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+}
+
+.anchor-chip {
+  padding: 6px 14px;
+  background-color: #f1f5f9;
+  color: #334e68;
+  border-radius: 20px;
+  font-size: 12.5px;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: all 0.15s ease;
+  border: 1px solid #dce6f2;
+}
+
+.anchor-chip:hover {
+  background-color: #002554;
+  color: #ffffff;
+  border-color: #002554;
+}
+
+/* Banner de Resumen Ejecutivo y Reubicación de Personal */
+.banner-ejecutivo {
+  background: linear-gradient(135deg, #002554 0%, #001838 100%);
+  border: 1.5px solid #FFD200;
+  border-radius: var(--radius-card);
+  padding: 24px;
+  color: #ffffff;
+  box-shadow: 0 8px 24px rgba(0, 37, 84, 0.25);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* =============================================================
+   SECCIÓN: OPTIMIZACIÓN DE DOTACIÓN Y RECURSOS A REUBICAR (SHEET 6)
+   ============================================================= */
+.opt-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background: transparent;
+  padding: 0;
+  box-shadow: none;
+  border: none;
+}
+
+/* 1. Dark Blue Header Banner (Sin tarjetas, texto grande y nítido) */
+.opt-banner-header {
+  background: linear-gradient(135deg, #001f47 0%, #002b66 100%);
+  border-radius: 14px;
+  padding: 26px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 36px;
+  box-shadow: 0 4px 18px rgba(0, 31, 71, 0.15);
+  color: #ffffff;
+  position: relative;
+  overflow: hidden;
+}
+
+.opt-banner-header::after {
+  content: "";
+  position: absolute;
+  right: -50px;
+  top: -50px;
+  width: 220px;
+  height: 220px;
+  background: radial-gradient(circle, rgba(255, 210, 0, 0.08) 0%, rgba(255,210,0,0) 70%);
+  pointer-events: none;
+}
+
+.opt-banner-left {
+  flex: 1;
+  max-width: 780px;
+}
+
+.opt-banner-badge {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: #FFD200;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+
+.opt-banner-title {
+  font-size: 28px;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0 0 10px 0;
+  letter-spacing: -0.4px;
+  line-height: 1.22;
+}
+
+.opt-banner-desc {
+  font-size: 15px;
+  color: #e2e8f0;
+  line-height: 1.55;
+  margin: 0;
+}
+
+.opt-banner-right {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  flex-shrink: 0;
+}
+
+/* Integrated Header Stats (Sin borde ni tarjeta) */
+.opt-banner-stat-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.opt-bstat-icon-wrap {
+  color: #38bdf8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.opt-bstat-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.opt-bstat-title {
+  display: block;
+  font-size: 13px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: #94a3b8;
+}
+
+.opt-bstat-num-row {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-top: 3px;
+}
+
+.opt-bstat-num {
+  font-size: 30px;
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1;
+  letter-spacing: -0.5px;
+}
+
+.opt-bstat-sub {
+  font-size: 14px;
+  font-weight: 600;
+  color: #cbd5e1;
+  white-space: nowrap;
+}
+
+.opt-banner-divider {
+  width: 1px;
+  height: 46px;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* 2. Top 4 KPI Cards */
+.opt-kpis-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.opt-kpi-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 18px 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  box-shadow: 0 2px 8px rgba(0, 37, 84, 0.04);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.opt-kpi-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0, 37, 84, 0.08);
+}
+
+.opt-kpi-icon-wrap {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.opt-kpi-icon-wrap.icon-blue {
+  background: #eff6ff;
+  color: #2563eb;
+}
+
+.opt-kpi-icon-wrap.icon-red {
+  background: #fef2f2;
+  color: #dc2626;
+}
+
+.opt-kpi-icon-wrap.icon-amber {
+  background: #fef9c3;
+  color: #d97706;
+}
+
+.opt-kpi-icon-wrap.icon-cyan {
+  background: #f0f9ff;
+  color: #0284c7;
+}
+
+.opt-kpi-body {
+  display: flex;
+  flex-direction: column;
+}
+
+.opt-kpi-num-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.opt-kpi-num {
+  font-size: 26px;
+  font-weight: 800;
+  color: #0f172a;
+  letter-spacing: -0.6px;
+  line-height: 1.1;
+}
+
+.opt-kpi-badge-red {
+  background: #fee2e2;
+  color: #b91c1c;
+  font-size: 11px;
+  font-weight: 800;
+  padding: 3px 8px;
+  border-radius: 6px;
+  display: inline-block;
+}
+
+.opt-kpi-label {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #1e293b;
+  margin-top: 4px;
+}
+
+.opt-kpi-sub {
+  font-size: 11.5px;
+  color: #64748b;
+  margin-top: 2px;
+}
+
+/* 3. Grid Principal 2 Columnas (Tabla + Mapa Federal) */
+.opt-mid-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.05fr;
+  gap: 16px;
+}
+
+.opt-col-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 2px 8px rgba(0, 37, 84, 0.04);
+}
+
+.opt-card-header {
+  margin-bottom: 14px;
+}
+
+.opt-card-title {
+  font-size: 15px;
+  font-weight: 800;
+  color: #002554;
+  margin: 0 0 3px 0;
+  letter-spacing: -0.2px;
+}
+
+.opt-card-sub {
+  font-size: 12px;
+  color: #64748b;
+  margin: 0;
+}
+
+/* Table in Col 1 */
+.opt-table-compact {
+  font-size: 12px;
+}
+
+.opt-table-compact th {
+  padding: 8px 10px;
+  font-size: 10.5px;
+  line-height: 1.25;
+}
+
+.opt-table-compact td {
+  padding: 9px 10px;
+}
+
+.opt-dot-reg {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-right: 6px;
+  vertical-align: middle;
+}
+
+.opt-badge-pct {
+  background: #f1f5f9;
+  color: #334155;
+  font-size: 11px;
+  font-weight: 800;
+  padding: 2px 7px;
+  border-radius: 6px;
+  display: inline-block;
+}
+
+.opt-badge-pct.high {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+.opt-badge-pct.mid {
+  background: #fef3c7;
+  color: #b45309;
+}
+
+.opt-excedentes-box {
+  margin-top: 12px;
+  padding: 10px 12px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 11.5px;
+  line-height: 1.4;
+}
+
+.opt-exc-title {
+  display: block;
+  font-weight: 800;
+  color: #002554;
+  margin-bottom: 2px;
+}
+
+.opt-exc-desc {
+  color: #475569;
+}
+
+/* Col 2: Map Card with Callouts */
+.opt-map-card {
+  justify-content: flex-start;
+}
+
+.opt-map-card .opt-card-header {
+  width: 100%;
+  text-align: left;
+}
+
+.opt-callout-map-wrap {
+  width: 100%;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 300px;
+  padding: 0;
+}
+
+.opt-callout-map-img {
+  width: 100%;
+  max-width: 405px;
+  height: auto;
+  object-fit: contain;
+  margin: 0 auto;
+  filter: drop-shadow(0 4px 8px rgba(0, 37, 84, 0.05));
+}
+
+/* Col 3: Donut */
+.opt-donut-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+}
+
+.opt-donut-canvas-wrap {
+  position: relative;
+  height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.opt-donut-center-badge {
+  display: none !important;
+}
+
+.opt-donut-val {
+  font-size: 24px;
+  font-weight: 800;
+  color: #0f172a;
+  line-height: 1;
+}
+
+.opt-donut-lbl {
+  font-size: 11px;
+  font-weight: 600;
+  color: #64748b;
+  margin-top: 3px;
+}
+
+.opt-donut-legend-list {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid #f1f5f9;
+}
+
+.opt-dleg-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 11.5px;
+}
+
+.opt-dleg-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.opt-dleg-label {
+  flex: 1;
+  color: #475569;
+}
+
+.opt-dleg-val {
+  color: #0f172a;
+  font-weight: 700;
+}
+
+/* 4. Full Width Bar Chart */
+.opt-fullwidth-chart-card {
+  margin-top: 0;
+}
+
+.opt-header-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.opt-chart-canvas-box {
+  width: 100%;
+  flex: 1;
+  min-height: 270px;
+}
+
+/* Responsive adjustments for optimization section */
+@media (max-width: 1200px) {
+  .opt-kpis-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .opt-mid-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .opt-banner-header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+    gap: 20px;
+  }
+  .opt-banner-right {
+    width: 100%;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  .opt-banner-divider {
+    display: none;
+  }
+  .opt-kpis-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Tabla de Transporte Interjurisdiccional */
+.transporte-filters-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 14px;
+}
+
+.transporte-pills-wrap {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.trans-chip {
+  padding: 5px 12px;
+  background-color: #f0f4f9;
+  color: #334e68;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  border: 1px solid #d0deec;
+  transition: all 0.15s ease;
+}
+
+.trans-chip.activo, .trans-chip:hover {
+  background-color: #002554;
+  color: #ffffff;
+  border-color: #002554;
+}
+
+.chip-servicio {
+  font-size: 10.5px;
+  font-weight: 800;
+  padding: 2px 7px;
+  border-radius: 4px;
+  display: inline-block;
+}
+
+.srv-adic { background-color: #dbeafe; color: #1e40af; }
+.srv-ltc { background-color: #e0e7ff; color: #3730a3; }
+.srv-bue { background-color: #fef3c7; color: #92400e; }
+.srv-atp { background-color: #fce7f3; color: #9d174d; }
+.srv-ltn { background-color: #dcfce7; color: #166534; }
+
+/* =====================================================
+   ESTILOS PARA MATRIZ Y CUADRO DE CALIDAD (SLA / FV)
+   ===================================================== */
+.cal-val-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 100px;
+}
+
+.cal-val-num {
+  font-size: 13.5px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.cal-val-num.sla-color {
+  color: #15803d;
+}
+
+.cal-val-num.fv-color {
+  color: #0369a1;
+}
+
+.cal-progress-bar {
+  width: 100%;
+  height: 6px;
+  background-color: #e2e8f0;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.cal-progress-fill {
+  height: 100%;
+  border-radius: 3px;
+  transition: width 0.4s ease;
+}
+
+.cal-progress-fill.sla-fill {
+  background: linear-gradient(90deg, #22c55e, #16a34a);
+}
+
+.cal-progress-fill.fv-fill {
+  background: linear-gradient(90deg, #38bdf8, #0284c7);
+}
+
+.cal-badge {
+  font-size: 11px;
+  font-weight: 800;
+  padding: 3px 9px;
+  border-radius: 12px;
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.badge-sla-optimo {
+  background-color: #dcfce7;
+  color: #15803d;
+  border: 1px solid #bbf7d0;
+}
+
+.badge-sla-bueno {
+  background-color: #f0fdf4;
+  color: #166534;
+  border: 1px solid #86efac;
+}
+
+.badge-sla-alerta {
+  background-color: #fef3c7;
+  color: #b45309;
+  border: 1px solid #fde68a;
+}
+
+.badge-fv-optimo {
+  background-color: #e0f2fe;
+  color: #0369a1;
+  border: 1px solid #bae6fd;
+}
+
+.badge-fv-bueno {
+  background-color: #f0f9ff;
+  color: #0284c7;
+  border: 1px solid #7dd3fc;
+}
+
+.badge-fv-alerta {
+  background-color: #fee2e2;
+  color: #b91c1c;
+  border: 1px solid #fecaca;
+}
+
+
